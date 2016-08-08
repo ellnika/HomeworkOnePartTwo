@@ -54,6 +54,9 @@
         }
         
         }
+        
+        NSLog(@"The string is NOT decimal: %@", input);
+        
     }
 }
 
