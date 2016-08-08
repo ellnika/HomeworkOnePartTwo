@@ -44,13 +44,16 @@
 
     for (int i = 0; i < [input length]; i++) {
         unichar singlechar = [input characterAtIndex: i];
-        if (( singlechar < '0' ) ||
-            ( singlechar > '9' )) {
-            break;
+        if (( singlechar > '0' ) &&
+            ( singlechar <= '9' ))
+        {
+            
+        if (i == (input.length-1))
+        {
+            NSLog(@"The string is decimal: %@", input);
         }
- else {
-             NSLog(@"The string is decimal: %@", input);
-    }
+        
+        }
     }
 }
 
