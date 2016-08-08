@@ -17,6 +17,9 @@
 @implementation ViewController
 
 - (IBAction)buttonClickedCheck:(id)sender {
+   /*
+    
+    Method one
     
     NSString *input;
     input=self.inputField.text;
@@ -29,6 +32,26 @@
         NSLog(@"The string is decimal: %@", input);
     }
     else NSLog(@"The string is NOT decimal: %@", input);
+    
+    */
+  
+    // Method two but it has a bug if first character is is digit before character it will still work needs fixing
+    
+    NSString *input;
+    input=self.inputField.text;
+    NSInteger length = input.length;
+    NSLog(@"Length is %ld", (long)length);
+
+    for (int i = 0; i < [input length]; i++) {
+        unichar singlechar = [input characterAtIndex: i];
+        if (( singlechar < '0' ) ||
+            ( singlechar > '9' )) {
+            break;
+        }
+ else {
+             NSLog(@"The string is decimal: %@", input);
+    }
+    }
 }
 
 - (void)viewDidLoad {
